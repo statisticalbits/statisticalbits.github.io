@@ -1,10 +1,15 @@
 ---
 layout: post
-title: You're up and running!
+title: Welcome to StatisticalBits
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+Why This Blog?
+I’ve enjoy the process of uncovering the hidden simple truths behind complicated topics and buzzwords - especially in Statistics and AI.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+What to Expect
+This blog is where I’ll explore statistics, AI, probability, and mathematical reasoning—starting from first principles and building up to deeper insights. My goal is to simplify without oversimplifying, to make concepts clear but not shallow, and to highlight the beauty in how things truly work.
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+Who’s This For?
+If you find joy in seeing through complexity, understanding the "why" behind concepts, and breaking big ideas into simple truths, this blog is for you.
+
+Looking forward to exploring these ideas together!
