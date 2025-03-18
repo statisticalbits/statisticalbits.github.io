@@ -2,7 +2,6 @@
 layout: post
 title: Welcome to StatisticalBits
 ---
-# Welcome to StatisticalBits
 
 ## Why This Blog?
 I’ve enjoy the process of uncovering the hidden simple truths behind complicated topics and buzzwords - especially in Statistics and AI.
