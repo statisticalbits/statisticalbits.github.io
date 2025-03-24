@@ -157,4 +157,4 @@ In essence, Z-scores help machine learning algorithms "speak the same language" 
 ABOVE ALL It helps in making decisions that makes sense.
 ---
 
-*What statistics concepts would you like to learn about next? Let me know in the comments below!*
+*Would love to hear from you, write to me at statisticsbits.gmail.com*
