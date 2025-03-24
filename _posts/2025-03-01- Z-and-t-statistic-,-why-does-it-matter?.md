@@ -108,7 +108,7 @@ Let's see this in action with a table comparing both School A and School B:
 | **SD**      | **5**            | **1.0**     |
 
 Notice something remarkable! Though the mean and SD of the weights in both schools are different, the mean and SD of Z-scores are exactly the same: mean = 0 and SD = 1.
-
+{% include charts/z-score-chart.html %}
 The Z score distributions are identical across these different datasets because we've standardized them. No matter what the original distribution looked like, Z-scores always create a standardized distribution with mean 0 and standard deviation 1, allowing us to compare relative positions across completely different datasets.
 
 This is the beauty of standardization! It creates a level playing field to analyze data and make decisions.
