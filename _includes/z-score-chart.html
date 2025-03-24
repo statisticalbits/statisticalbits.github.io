@@ -1,0 +1,92 @@
+<canvas id="zScoreChart" width="600" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('zScoreChart');
+  
+  // Create data points for a normal distribution
+  function normalDistribution(x, mean, stdDev) {
+    return Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2)) / (stdDev * Math.sqrt(2 * Math.PI));
+  }
+  
+  const labels = [];
+  const normalData = [];
+  
+  for (let x = -4; x <= 4; x += 0.1) {
+    labels.push(x.toFixed(1));
+    normalData.push(normalDistribution(x, 0, 1));
+  }
+  
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Standard Normal Distribution (Z-scores)',
+        data: normalData,
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Z-Score Distribution'
+        },
+        annotation: {
+          annotations: {
+            line1: {
+              type: 'line',
+              xMin: -2,
+              xMax: -2,
+              borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 2,
+              label: {
+                content: 'Z = -2',
+                enabled: true
+              }
+            },
+            line2: {
+              type: 'line',
+              xMin: 0,
+              xMax: 0,
+              borderColor: 'rgb(75, 192, 192)',
+              borderWidth: 2,
+              label: {
+                content: 'Z = 0 (Mean)',
+                enabled: true
+              }
+            },
+            line3: {
+              type: 'line',
+              xMin: 2,
+              xMax: 2,
+              borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 2,
+              label: {
+                content: 'Z = 2',
+                enabled: true
+              }
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Z-score'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Probability Density'
+          }
+        }
+      }
+    }
+  });
+</script>
