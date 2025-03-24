@@ -1,0 +1,87 @@
+<div class="chart-container" style="position: relative; height:500px; width:100%">
+  <canvas id="beforeAfterChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('beforeAfterChart');
+    
+    // Data for original distributions (weights)
+    const schoolAWeights = [90, 95, 100, 105, 110, 115, 120, 125, 130, 135];
+    const schoolBWeights = [120, 125, 130, 135, 140];
+    
+    // Data for z-score distributions
+    const schoolAZScores = [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5];
+    const schoolBZScores = [-2, -1, 0, 1, 2];
+    
+    new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'School A Original Weights',
+            data: schoolAWeights.map(x => ({ x: x, y: 0 })),
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            pointRadius: 8,
+            showLine: false
+          },
+          {
+            label: 'School B Original Weights',
+            data: schoolBWeights.map(x => ({ x: x, y: 1 })),
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            pointRadius: 8,
+            showLine: false
+          },
+          {
+            label: 'School A Z-Scores',
+            data: schoolAZScores.map(x => ({ x: x, y: 2 })),
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            pointRadius: 8,
+            showLine: false
+          },
+          {
+            label: 'School B Z-Scores',
+            data: schoolBZScores.map(x => ({ x: x, y: 3 })),
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            pointRadius: 8,
+            showLine: false
+          }
+        ]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Before and After Standardization: School A vs School B',
+            font: {
+              size: 16
+            }
+          },
+          legend: {
+            position: 'top'
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Weight (lbs) / Z-Score'
+            },
+            grid: {
+              display: true
+            }
+          },
+          y: {
+            title: {
+              display: false
+            },
+            type: 'category',
+            labels: ['Original School A', 'Original School B', 'Z-Score School A', 'Z-Score School B'],
+            offset: true,
+            position: 'left'
+          }
+        }
+      }
+    });
+  });
+</script>
