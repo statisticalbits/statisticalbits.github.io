@@ -107,7 +107,7 @@ Let's see this in action with a table comparing both School A and School B:
 
 Here you can see how the original weight distributions differ between schools, but after converting to Z-scores, the distributions become directly comparable:
 
-{% include before-after-standardization.html %}
+{% include z-score-comparison.html %}
 
 Notice something remarkable! Though the mean and SD of the weights in both schools are different, the mean and SD of Z-scores are exactly the same: mean = 0 and SD = 1.
 
