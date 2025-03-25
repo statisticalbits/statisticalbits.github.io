@@ -1,0 +1,142 @@
+<div class="chart-container" style="position: relative; height:500px; width:100%">
+  <canvas id="zScoreInterpretationChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('zScoreInterpretationChart');
+    
+    // Function to generate normal distribution data points
+    function normalDistribution(x, mean, stdDev) {
+      return Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2)) / (stdDev * Math.sqrt(2 * Math.PI));
+    }
+    
+    // Key Z-scores
+    const zScores = [-2, -1, 0, 1, 2];
+    
+    // School A parameters
+    const schoolAMean = 110;
+    const schoolASD = 10;
+    
+    // School B parameters
+    const schoolBMean = 130;
+    const schoolBSD = 5;
+    
+    // Calculate weights for each Z-score
+    const schoolAWeights = zScores.map(z => schoolAMean + z * schoolASD);
+    const schoolBWeights = zScores.map(z => schoolBMean + z * schoolBSD);
+    
+    // Generate data for background distribution curves
+    const xValues = [];
+    const schoolADistribution = [];
+    const schoolBDistribution = [];
+    
+    for (let x = 70; x <= 160; x += 1) {
+      xValues.push(x);
+      schoolADistribution.push(normalDistribution(x, schoolAMean, schoolASD) * 10);
+      schoolBDistribution.push(normalDistribution(x, schoolBMean, schoolBSD) * 10);
+    }
+    
+    // Create the chart
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            label: 'School A Distribution',
+            data: schoolADistribution,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: true,
+            tension: 0.4
+          },
+          {
+            label: 'School B Distribution',
+            data: schoolBDistribution,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: true,
+            tension: 0.4
+          },
+          {
+            label: 'School A Key Points',
+            data: zScores.map((z, i) => ({
+              x: schoolAWeights[i],
+              y: normalDistribution(schoolAWeights[i], schoolAMean, schoolASD) * 10
+            })),
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 2,
+            pointRadius: 8,
+            pointHoverRadius: 10,
+            showLine: false
+          },
+          {
+            label: 'School B Key Points',
+            data: zScores.map((z, i) => ({
+              x: schoolBWeights[i],
+              y: normalDistribution(schoolBWeights[i], schoolBMean, schoolBSD) * 10
+            })),
+            backgroundColor: 'rgba(54, 162, 235, 1)',
+            borderColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 2,
+            pointRadius: 8,
+            pointHoverRadius: 10,
+            showLine: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const datasetLabel = context.dataset.label || '';
+                const index = context.dataIndex;
+                
+                // Only add special tooltip for key points datasets
+                if (context.datasetIndex === 2) { // School A key points
+                  return `${datasetLabel}: Z = ${zScores[index]}, Weight = ${schoolAWeights[index]} lbs`;
+                } else if (context.datasetIndex === 3) { // School B key points
+                  return `${datasetLabel}: Z = ${zScores[index]}, Weight = ${schoolBWeights[index]} lbs`;
+                }
+                
+                return datasetLabel;
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: 'Z-Scores Translated to Actual Weights',
+            font: { size: 16 }
+          },
+          subtitle: {
+            display: true,
+            text: 'Hover over points to see Z-scores and corresponding weights',
+            padding: { bottom: 10 }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Weight (lbs)'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Probability Density'
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
