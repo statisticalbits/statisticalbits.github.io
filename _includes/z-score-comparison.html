@@ -1,0 +1,184 @@
+<!-- This file should be saved as _includes/z-score-comparison.html -->
+
+<div class="chart-container" style="position: relative; height:500px; width:100%">
+  <canvas id="comparisonChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('comparisonChart');
+    
+    // Function to generate normal distribution data points
+    function normalDistribution(x, mean, stdDev) {
+      return Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2)) / (stdDev * Math.sqrt(2 * Math.PI));
+    }
+    
+    // Generate x-axis values
+    const xValues = [];
+    for (let x = 70; x <= 160; x += 1) {
+      xValues.push(x);
+    }
+    
+    // Generate z-axis values
+    const zValues = [];
+    for (let z = -4; z <= 4; z += 0.2) {
+      zValues.push(z);
+    }
+    
+    // Generate data for original distributions (weights)
+    const schoolAOriginal = xValues.map(x => ({
+      x: x,
+      y: normalDistribution(x, 110, 10) * 10  // Scale for visibility
+    }));
+    
+    const schoolBOriginal = xValues.map(x => ({
+      x: x,
+      y: normalDistribution(x, 130, 5) * 10   // Scale for visibility
+    }));
+    
+    // Generate data for standardized distributions (Z-scores)
+    const schoolAStandardized = zValues.map(z => ({
+      x: z,
+      y: normalDistribution(z, 0, 1)
+    }));
+    
+    const schoolBStandardized = zValues.map(z => ({
+      x: z,
+      y: normalDistribution(z, 0, 1)
+    }));
+    
+    // Create the chart
+    new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'School A Original (Mean=110, SD=10)',
+            data: schoolAOriginal,
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',  // Red
+            borderColor: 'rgba(255, 99, 132, 1)',
+            pointRadius: 0,
+            showLine: true,
+            tension: 0.4,
+            yAxisID: 'y-original'
+          },
+          {
+            label: 'School B Original (Mean=130, SD=5)',
+            data: schoolBOriginal,
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',  // Blue
+            borderColor: 'rgba(54, 162, 235, 1)',
+            pointRadius: 0,
+            showLine: true,
+            tension: 0.4,
+            yAxisID: 'y-original'
+          },
+          {
+            label: 'School A Z-Scores (Mean=0, SD=1)',
+            data: schoolAStandardized,
+            backgroundColor: 'rgba(255, 159, 64, 0.7)',  // Orange
+            borderColor: 'rgba(255, 159, 64, 1)',
+            pointRadius: 0,
+            showLine: true,
+            tension: 0.4,
+            hidden: true,  // Start with this hidden
+            yAxisID: 'y-zscores'
+          },
+          {
+            label: 'School B Z-Scores (Mean=0, SD=1)',
+            data: schoolBStandardized,
+            backgroundColor: 'rgba(75, 192, 192, 0.7)',  // Green
+            borderColor: 'rgba(75, 192, 192, 1)',
+            pointRadius: 0,
+            showLine: true,
+            tension: 0.4,
+            hidden: true,  // Start with this hidden
+            yAxisID: 'y-zscores'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Original Distributions vs. Z-Score Standardization',
+            font: {
+              size: 16
+            }
+          },
+          subtitle: {
+            display: true,
+            text: 'Click legend items to toggle between original and standardized views',
+            padding: {
+              bottom: 10
+            }
+          },
+          legend: {
+            position: 'top',
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
+                }
+                label += context.parsed.x.toFixed(1);
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            position: 'bottom',
+            title: {
+              display: true,
+              text: 'Weight (lbs) / Z-Score'
+            },
+            ticks: {
+              callback: function(value, index, values) {
+                // If any of the Z-score datasets are visible, show z-score ticks
+                const chart = this.chart;
+                const zScoresVisible = chart.data.datasets[2].hidden === false || 
+                                      chart.data.datasets[3].hidden === false;
+                
+                if (zScoresVisible) {
+                  // If viewing z-scores
+                  return value;
+                } else {
+                  // If viewing original weights
+                  return value;
+                }
+              }
+            }
+          },
+          'y-original': {
+            position: 'left',
+            title: {
+              display: true,
+              text: 'Probability Density (Original)'
+            },
+            grid: {
+              display: true
+            }
+          },
+          'y-zscores': {
+            position: 'right',
+            title: {
+              display: true,
+              text: 'Probability Density (Z-Scores)'
+            },
+            grid: {
+              display: false
+            }
+          }
+        }
+      },
+    });
+  });
+</script>
