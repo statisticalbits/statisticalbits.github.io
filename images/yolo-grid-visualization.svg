@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">YOLO: How Grid Cells Predict Bounding Boxes</text>
+  
+  <!-- Image area with grid -->
+  <rect x="50" y="80" width="420" height="350" fill="#e9ecef" stroke="#343a40" stroke-width="2"/>
+  
+  <!-- Grid lines - vertical -->
+  <line x1="190" y1="80" x2="190" y2="430" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="330" y1="80" x2="330" y2="430" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Grid lines - horizontal -->
+  <line x1="50" y1="196.67" x2="470" y2="196.67" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="50" y1="313.33" x2="470" y2="313.33" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Dog image silhouette -->
+  <ellipse cx="260" cy="220" rx="120" ry="90" fill="#ffd166" stroke="#343a40" stroke-width="2"/>
+  <ellipse cx="350" cy="200" rx="25" ry="35" fill="#ffd166" stroke="#343a40" stroke-width="2"/> <!-- head -->
+  <ellipse cx="170" cy="220" rx="15" ry="60" fill="#ffd166" stroke="#343a40" stroke-width="2"/> <!-- tail -->
+  
+  <!-- Center point of dog -->
+  <circle cx="260" cy="220" r="8" fill="#ef476f"/>
+  <circle cx="260" cy="220" r="4" fill="#ffffff"/>
+  
+  <!-- Bounding box -->
+  <rect x="160" y="150" width="210" height="140" fill="none" stroke="#06d6a0" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- Cell highlight -->
+  <rect x="190" y="196.67" width="140" height="116.66" fill="rgba(118, 201, 255, 0.3)" stroke="#007bff" stroke-width="2"/>
+  
+  <!-- Arrows from cell to bounding box -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#343a40"/>
+    </marker>
+  </defs>
+  <line x1="260" y1="255" x2="160" y2="150" stroke="#343a40" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="260" y1="255" x2="370" y2="150" stroke="#343a40" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="260" y1="255" x2="370" y2="290" stroke="#343a40" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <line x1="260" y1="255" x2="160" y2="290" stroke="#343a40" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Legend and explanation -->
+  <rect x="520" y="100" width="240" height="300" fill="#ffffff" stroke="#343a40" stroke-width="1"/>
+  
+  <!-- Legend items -->
+  <circle cx="535" cy="130" r="8" fill="#ef476f"/>
+  <circle cx="535" cy="130" r="4" fill="#ffffff"/>
+  <text x="550" y="135" font-family="Arial, sans-serif" font-size="14">Object Center Point</text>
+  
+  <rect x="530" y="150" width="10" height="10" fill="rgba(118, 201, 255, 0.3)" stroke="#007bff" stroke-width="2"/>
+  <text x="550" y="160" font-family="Arial, sans-serif" font-size="14">Responsible Grid Cell</text>
+  
+  <rect x="530" y="180" width="10" height="10" fill="none" stroke="#06d6a0" stroke-width="2"/>
+  <text x="550" y="190" font-family="Arial, sans-serif" font-size="14">Predicted Bounding Box</text>
+  
+  <!-- Explanation -->
+  <text x="530" y="220" font-family="Arial, sans-serif" font-size="12">How it works:</text>
+  <text x="530" y="245" font-family="Arial, sans-serif" font-size="12">1. Image is divided into a grid</text>
+  <text x="530" y="270" font-family="Arial, sans-serif" font-size="12">2. The grid cell containing the</text>
+  <text x="530" y="290" font-family="Arial, sans-serif" font-size="12">   object's center is responsible</text>
+  <text x="530" y="310" font-family="Arial, sans-serif" font-size="12">   for detecting that object</text>
+  <text x="530" y="335" font-family="Arial, sans-serif" font-size="12">3. This cell predicts the ENTIRE</text>
+  <text x="530" y="355" font-family="Arial, sans-serif" font-size="12">   bounding box, even if it extends</text>
+  <text x="530" y="375" font-family="Arial, sans-serif" font-size="12">   beyond the cell's boundaries</text>
+  
+  <!-- Grid coordinates -->
+  <text x="120" y="140" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(0,0)</text>
+  <text x="260" y="140" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(1,0)</text>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(2,0)</text>
+  
+  <text x="120" y="255" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(0,1)</text>
+  <text x="260" y="255" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">(1,1)</text>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(2,1)</text>
+  
+  <text x="120" y="370" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(0,2)</text>
+  <text x="260" y="370" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(1,2)</text>
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">(2,2)</text>
+  
+  <!-- Footer -->
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-style="italic">Note: YOLO predicts multiple bounding boxes per cell and keeps the highest confidence ones</text>
+</svg>

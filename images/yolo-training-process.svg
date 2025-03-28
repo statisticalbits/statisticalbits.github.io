@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">YOLO Training Process: From Input to Prediction</text>
+  
+  <!-- Three column layout -->
+  <!-- Column 1: Input Image -->
+  <rect x="30" y="80" width="220" height="150" fill="#e9ecef" stroke="#343a40" stroke-width="2"/>
+  <text x="140" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Input Image</text>
+  
+  <!-- Grid lines - vertical -->
+  <line x1="103" y1="80" x2="103" y2="230" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="176" y1="80" x2="176" y2="230" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Grid lines - horizontal -->
+  <line x1="30" y1="130" x2="250" y2="130" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="30" y1="180" x2="250" y2="180" stroke="#343a40" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Dog in center cell -->
+  <ellipse cx="140" cy="155" rx="50" ry="35" fill="#ffd166" stroke="#343a40" stroke-width="2"/>
+  <ellipse cx="175" cy="145" rx="15" ry="15" fill="#ffd166" stroke="#343a40" stroke-width="2"/> <!-- head -->
+  <ellipse cx="105" cy="155" rx="7" ry="20" fill="#ffd166" stroke="#343a40" stroke-width="2"/> <!-- tail -->
+  
+  <!-- Center point of dog -->
+  <circle cx="140" cy="155" r="5" fill="#ef476f"/>
+  <circle cx="140" cy="155" r="2" fill="#ffffff"/>
+  
+  <!-- Column 2: CNN Process -->
+  <rect x="300" y="80" width="220" height="330" rx="10" ry="10" fill="#fafafa" stroke="#343a40" stroke-width="2"/>
+  <text x="410" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">CNN Processing</text>
+  
+  <!-- CNN layers representation -->
+  <rect x="320" y="100" width="180" height="30" rx="5" ry="5" fill="#118ab2" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="120" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Convolution Layer 1</text>
+  
+  <rect x="330" y="140" width="160" height="30" rx="5" ry="5" fill="#0096c7" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="160" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Pooling Layer 1</text>
+  
+  <rect x="320" y="180" width="180" height="30" rx="5" ry="5" fill="#118ab2" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="200" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Convolution Layer 2</text>
+  
+  <rect x="330" y="220" width="160" height="30" rx="5" ry="5" fill="#0096c7" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="240" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Pooling Layer 2</text>
+  
+  <rect x="320" y="260" width="180" height="30" rx="5" ry="5" fill="#118ab2" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="280" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Feature Extraction Layers</text>
+  
+  <rect x="320" y="300" width="180" height="30" rx="5" ry="5" fill="#ef476f" stroke="#9d0208" stroke-width="1"/>
+  <text x="410" y="320" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Fully Connected Layers</text>
+  
+  <rect x="320" y="340" width="180" height="40" rx="5" ry="5" fill="#06d6a0" stroke="#073b4c" stroke-width="1"/>
+  <text x="410" y="355" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">YOLO Detection Layer</text>
+  <text x="410" y="370" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">(Predicts boxes, confidence, classes)</text>
+  
+  <!-- Column 3: Output -->
+  <rect x="570" y="80" width="200" height="330" fill="#ffffff" stroke="#343a40" stroke-width="2"/>
+  <text x="670" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Prediction Process</text>
+  
+  <!-- Initial predictions -->
+  <rect x="590" y="100" width="160" height="70" rx="5" ry="5" fill="#f8f9fa" stroke="#343a40" stroke-width="1"/>
+  <text x="670" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Initial Prediction</text>
+  <rect x="620" y="130" width="100" height="30" fill="none" stroke="#ef476f" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <!-- Ground truth -->
+  <rect x="590" y="180" width="160" height="70" rx="5" ry="5" fill="#f8f9fa" stroke="#343a40" stroke-width="1"/>
+  <text x="670" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Ground Truth</text>
+  <rect x="610" y="210" width="120" height="30" fill="none" stroke="#06d6a0" stroke-width="2"/>
+  
+  <!-- Loss calculation -->
+  <rect x="590" y="260" width="160" height="70" rx="5" ry="5" fill="#f8f9fa" stroke="#343a40" stroke-width="1"/>
+  <text x="670" y="280" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Loss Calculation</text>
+  <text x="670" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Position Error: 0.2</text>
+  <text x="670" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Size Error: 0.3</text>
+  
+  <!-- Training feedback -->
+  <path d="M 590,350 L 750,350 L 750,380 Q 750,390 740,390 L 600,390 Q 590,390 590,380 L 590,350" fill="#f8f9fa" stroke="#343a40" stroke-width="1"/>
+  <text x="670" y="370" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#073b4c">Update Weights</text>
+  
+  <!-- Arrows connecting the process -->
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#343a40"/>
+    </marker>
+  </defs>
+  
+  <line x1="250" y1="150" x2="300" y2="150" stroke="#343a40" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  <line x1="520" y1="220" x2="590" y2="220" stroke="#343a40" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  <line x1="670" y1="330" x2="670" y2="350" stroke="#343a40" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  <path d="M 590,370 C 540,370 540,245 300,245" stroke="#343a40" stroke-width="2" fill="none" stroke-dasharray="6,3" marker-end="url(#arrowhead2)"/>
+  
+  <!-- Footer notes -->
+  <text x="400" y="435" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Each cell predicts: [x, y, w, h, confidence, class probabilities]</text>
+  <text x="400" y="460" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-style="italic">Training reduces the difference between predictions and ground truth</text>
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-style="italic">After many iterations, predictions become accurate</text>
+</svg>
