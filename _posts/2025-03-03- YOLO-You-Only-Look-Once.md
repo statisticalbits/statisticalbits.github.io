@@ -99,13 +99,15 @@ Well, now we have a trained YOLO model. What's next? Ready to put it to the test
 
 You can actually run real-time tests on this webpage: (http://pjreddie.com/yolo/)
 
-Here is an example that I ran using YOLOv8 model that is already pre-trained and available in python. 
+Here is an example that I ran using YOLOv8 model that is already pre-trained and available in python.
+You can find the complete code for this YOLO demonstration [in this GitHub Gist](https://gist.github.com/statisticalbits/b887dc9fac53ad7fab24cb379321ce28)
+
 
 ![YOLO OBJECT DETECTION](/images/Yolo_object_detection.png)
-*The YOLO object detection: from real input image to object detection using YOLOv8 Model
+*The YOLO object detection: from real input image to object detection using YOLOv8 Model*
 
 ![YOLO PREDICTION VECTORS](/images/YOLO_Prediction_Vectors.png)
-*The YOLO prediction vectors: Output of prediction vectors from YOLOv8 Model
+*The YOLO prediction vectors: Output of prediction vectors from YOLOv8 Model*
 
 
 ## Why is YOLO special?
