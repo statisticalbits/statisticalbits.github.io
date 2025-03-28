@@ -40,7 +40,8 @@ For cell (1, 1), the dog's absolute coordinates are converted into YOLO FORMAT: 
 
 The dog's width is 40% of the image width, and its height is 60% of the image height.
 
-{% include figure.html path="images/yolo-grid-visualization.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="YOLO Grid Cell Prediction" caption="How a single grid cell in YOLO predicts the entire bounding box of an object, even when the object extends beyond the cell boundaries." %}
+![YOLO Grid Cell Prediction](/images/yolo-grid-visualization.svg)
+*How a single grid cell in YOLO predicts the entire bounding box of an object, even when the object extends beyond the cell boundaries.*
 
 Why do we need to calculate these relative values? It works for any image size and simplifies learning for the CNN.
 
@@ -91,11 +92,15 @@ Here is an example of training on 3 Images (2 Epochs):
 
 The dog image is reused, but the model sees it mixed with other images to avoid overfitting and to generalize better.
 
-{% include figure.html path="images/yolo-training-process.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="YOLO Training Process" caption="The YOLO training process: from input image through CNN to predictions and weight updates." %}
+![YOLO Training Process](/images/yolo-training-process.svg)
+*The YOLO training process: from input image through CNN to predictions and weight updates.*
 
 Well, now we have a trained YOLO model. What's next? Ready to put it to the test?
 
 You can actually run real-time tests on this webpage: (http://pjreddie.com/yolo/)
+
+Here is an example that I ran using YOLOv8 model that is already pre-trained and available in python. 
+
 
 ## Why is YOLO special?
 
