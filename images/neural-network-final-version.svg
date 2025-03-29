@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Neural Network with All Weights</text>
+  
+  <!-- Input Layer -->
+  <g>
+    <text x="120" y="70" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Input Layer</text>
+    <circle cx="120" cy="130" r="25" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="120" cy="230" r="25" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="120" cy="330" r="25" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="120" cy="430" r="25" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    
+    <text x="120" y="135" font-family="Arial" font-size="16" text-anchor="middle">x₁</text>
+    <text x="120" y="235" font-family="Arial" font-size="16" text-anchor="middle">x₂</text>
+    <text x="120" y="335" font-family="Arial" font-size="16" text-anchor="middle">x₃</text>
+    <text x="120" y="435" font-family="Arial" font-size="16" text-anchor="middle">x₄</text>
+    
+    <!-- Input Values -->
+    <text x="65" y="130" font-family="Arial" font-size="14" text-anchor="end">0.2</text>
+    <text x="65" y="230" font-family="Arial" font-size="14" text-anchor="end">0.5</text>
+    <text x="65" y="330" font-family="Arial" font-size="14" text-anchor="end">0.1</text>
+    <text x="65" y="430" font-family="Arial" font-size="14" text-anchor="end">0.8</text>
+  </g>
+
+  <!-- Hidden Layer -->
+  <g>
+    <text x="400" y="70" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Hidden Layer</text>
+    <circle cx="400" cy="180" r="25" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    <circle cx="400" cy="280" r="25" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    <circle cx="400" cy="380" r="25" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    
+    <text x="400" y="185" font-family="Arial" font-size="16" text-anchor="middle">h₁</text>
+    <text x="400" y="285" font-family="Arial" font-size="16" text-anchor="middle">h₂</text>
+    <text x="400" y="385" font-family="Arial" font-size="16" text-anchor="middle">h₃</text>
+    
+    <!-- Bias values -->
+    <rect x="440" y="165" width="60" height="30" rx="5" ry="5" fill="#FFECB3" stroke="#FFA000" stroke-width="1.5"/>
+    <rect x="440" y="265" width="60" height="30" rx="5" ry="5" fill="#FFECB3" stroke="#FFA000" stroke-width="1.5"/>
+    <rect x="440" y="365" width="60" height="30" rx="5" ry="5" fill="#FFECB3" stroke="#FFA000" stroke-width="1.5"/>
+    
+    <text x="470" y="185" font-family="Arial" font-size="14" text-anchor="middle">b₁=0.5</text>
+    <text x="470" y="285" font-family="Arial" font-size="14" text-anchor="middle">b₁=-0.3</text>
+    <text x="470" y="385" font-family="Arial" font-size="14" text-anchor="middle">b₁=0.7</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g>
+    <text x="680" y="70" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Output Layer</text>
+    <circle cx="680" cy="280" r="25" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2"/>
+    
+    <text x="680" y="285" font-family="Arial" font-size="16" text-anchor="middle">y</text>
+    
+    <!-- Bias value -->
+    <rect x="720" y="265" width="60" height="30" rx="5" ry="5" fill="#FFECB3" stroke="#FFA000" stroke-width="1.5"/>
+    <text x="750" y="285" font-family="Arial" font-size="14" text-anchor="middle">b₂=0.2</text>
+  </g>
+
+  <!-- First row weights: x₁ to hidden -->
+  <g>
+    <line x1="145" y1="130" x2="375" y2="180" stroke="#1976D2" stroke-width="2"/>
+    <rect x="215" y="140" width="40" height="20" rx="5" ry="5" fill="white" stroke="#1976D2" stroke-width="1"/>
+    <text x="235" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="#1976D2">0.1</text>
+    
+    <line x1="145" y1="130" x2="375" y2="280" stroke="#1976D2" stroke-width="2"/>
+    <rect x="220" y="175" width="40" height="20" rx="5" ry="5" fill="white" stroke="#1976D2" stroke-width="1"/>
+    <text x="240" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#1976D2">0.3</text>
+    
+    <line x1="145" y1="130" x2="375" y2="380" stroke="#1976D2" stroke-width="2"/>
+    <rect x="225" y="210" width="40" height="20" rx="5" ry="5" fill="white" stroke="#1976D2" stroke-width="1"/>
+    <text x="245" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#1976D2">-0.2</text>
+  </g>
+  
+  <!-- Second row weights: x₂ to hidden -->
+  <g>
+    <line x1="145" y1="230" x2="375" y2="180" stroke="#42A5F5" stroke-width="2"/>
+    <rect x="215" y="190" width="40" height="20" rx="5" ry="5" fill="white" stroke="#42A5F5" stroke-width="1"/>
+    <text x="235" y="205" font-family="Arial" font-size="12" text-anchor="middle" fill="#42A5F5">0.2</text>
+    
+    <line x1="145" y1="230" x2="375" y2="280" stroke="#42A5F5" stroke-width="2"/>
+    <rect x="260" y="245" width="40" height="20" rx="5" ry="5" fill="white" stroke="#42A5F5" stroke-width="1"/>
+    <text x="280" y="260" font-family="Arial" font-size="12" text-anchor="middle" fill="#42A5F5">0.1</text>
+    
+    <line x1="145" y1="230" x2="375" y2="380" stroke="#42A5F5" stroke-width="2"/>
+    <rect x="260" y="290" width="40" height="20" rx="5" ry="5" fill="white" stroke="#42A5F5" stroke-width="1"/>
+    <text x="280" y="305" font-family="Arial" font-size="12" text-anchor="middle" fill="#42A5F5">0.3</text>
+  </g>
+  
+  <!-- Third row weights: x₃ to hidden -->
+  <g>
+    <line x1="145" y1="330" x2="375" y2="180" stroke="#7E57C2" stroke-width="2"/>
+    <rect x="220" y="255" width="40" height="20" rx="5" ry="5" fill="white" stroke="#7E57C2" stroke-width="1"/>
+    <text x="240" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#7E57C2">-0.1</text>
+    
+    <line x1="145" y1="330" x2="375" y2="280" stroke="#7E57C2" stroke-width="2"/>
+    <rect x="215" y="315" width="40" height="20" rx="5" ry="5" fill="white" stroke="#7E57C2" stroke-width="1"/>
+    <text x="235" y="330" font-family="Arial" font-size="12" text-anchor="middle" fill="#7E57C2">-0.3</text>
+    
+    <line x1="145" y1="330" x2="375" y2="380" stroke="#7E57C2" stroke-width="2"/>
+    <rect x="260" y="345" width="40" height="20" rx="5" ry="5" fill="white" stroke="#7E57C2" stroke-width="1"/>
+    <text x="280" y="360" font-family="Arial" font-size="12" text-anchor="middle" fill="#7E57C2">0.4</text>
+  </g>
+  
+  <!-- Fourth row weights: x₄ to hidden -->
+  <g>
+    <line x1="145" y1="430" x2="375" y2="180" stroke="#EC407A" stroke-width="2"/>
+    <rect x="225" y="290" width="40" height="20" rx="5" ry="5" fill="white" stroke="#EC407A" stroke-width="1"/>
+    <text x="245" y="305" font-family="Arial" font-size="12" text-anchor="middle" fill="#EC407A">0.1</text>
+    
+    <line x1="145" y1="430" x2="375" y2="280" stroke="#EC407A" stroke-width="2"/>
+    <rect x="235" y="335" width="40" height="20" rx="5" ry="5" fill="white" stroke="#EC407A" stroke-width="1"/>
+    <text x="255" y="350" font-family="Arial" font-size="12" text-anchor="middle" fill="#EC407A">0.2</text>
+    
+    <line x1="145" y1="430" x2="375" y2="380" stroke="#EC407A" stroke-width="2"/>
+    <rect x="255" y="390" width="40" height="20" rx="5" ry="5" fill="white" stroke="#EC407A" stroke-width="1"/>
+    <text x="275" y="405" font-family="Arial" font-size="12" text-anchor="middle" fill="#EC407A">0.1</text>
+  </g>
+
+  <!-- Hidden to Output weights -->
+  <g>
+    <line x1="425" y1="180" x2="655" y2="280" stroke="#388E3C" stroke-width="2.5"/>
+    <rect x="525" y="210" width="40" height="20" rx="5" ry="5" fill="white" stroke="#388E3C" stroke-width="1"/>
+    <text x="545" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#388E3C">0.5</text>
+    
+    <line x1="425" y1="280" x2="655" y2="280" stroke="#388E3C" stroke-width="2.5"/>
+    <rect x="520" y="260" width="40" height="20" rx="5" ry="5" fill="white" stroke="#388E3C" stroke-width="1"/>
+    <text x="540" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#388E3C">-0.3</text>
+    
+    <line x1="425" y1="380" x2="655" y2="280" stroke="#388E3C" stroke-width="2.5"/>
+    <rect x="525" y="310" width="40" height="20" rx="5" ry="5" fill="white" stroke="#388E3C" stroke-width="1"/>
+    <text x="545" y="325" font-family="Arial" font-size="12" text-anchor="middle" fill="#388E3C">0.8</text>
+  </g>
+  
+  <!-- Weight Matrices -->
+  <g>
+    <text x="250" y="455" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Weight Matrices</text>
+    
+    <rect x="80" y="475" width="350" height="90" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" fill-opacity="0.7"/>
+    <text x="255" y="495" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">W₁ (3×4)</text>
+    <text x="110" y="520" font-family="Arial" font-size="12" text-anchor="start" fill="#1976D2">h₁ weights:</text>
+    <text x="255" y="520" font-family="Courier New" font-size="14" text-anchor="middle">[0.1  0.2  -0.1  0.1]</text>
+    <text x="110" y="540" font-family="Arial" font-size="12" text-anchor="start" fill="#42A5F5">h₂ weights:</text>
+    <text x="255" y="540" font-family="Courier New" font-size="14" text-anchor="middle">[0.3  0.1  -0.3  0.2]</text>
+    <text x="110" y="560" font-family="Arial" font-size="12" text-anchor="start" fill="#7E57C2">h₃ weights:</text>
+    <text x="255" y="560" font-family="Courier New" font-size="14" text-anchor="middle">[-0.2 0.3  0.4   0.1]</text>
+    
+    <rect x="450" y="490" width="180" height="60" fill="#E8F5E9" stroke="#388E3C" stroke-width="2" fill-opacity="0.7"/>
+    <text x="540" y="510" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">W₂ (1×3)</text>
+    <text x="540" y="535" font-family="Courier New" font-size="14" text-anchor="middle">[0.5  -0.3  0.8]</text>
+  </g>
+  
+  <!-- Legend -->
+  <g>
+    <text x="640" y="475" font-family="Arial" font-size="14" font-weight="bold" text-anchor="start">Color Legend:</text>
+    
+    <g transform="translate(640, 490)">
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#1976D2" stroke-width="2"/>
+      <text x="25" y="4" font-family="Arial" font-size="12">x₁ weights</text>
+    </g>
+    
+    <g transform="translate(640, 510)">
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#42A5F5" stroke-width="2"/>
+      <text x="25" y="4" font-family="Arial" font-size="12">x₂ weights</text>
+    </g>
+    
+    <g transform="translate(640, 530)">
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#7E57C2" stroke-width="2"/>
+      <text x="25" y="4" font-family="Arial" font-size="12">x₃ weights</text>
+    </g>
+    
+    <g transform="translate(640, 550)">
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#EC407A" stroke-width="2"/>
+      <text x="25" y="4" font-family="Arial" font-size="12">x₄ weights</text>
+    </g>
+    
+    <g transform="translate(640, 570)">
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#388E3C" stroke-width="2"/>
+      <text x="25" y="4" font-family="Arial" font-size="12">Output weights</text>
+    </g>
+  </g>
+</svg>
