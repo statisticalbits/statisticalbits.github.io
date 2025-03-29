@@ -236,6 +236,8 @@ The result, 1.51, doesn't mean much in our binary classification context. We nee
 
 $$\text{sigmoid}(x) = \frac{1}{1 + e^{-x}}$$
 
+What Sigmoid does is transform linear combinations into meaningful probability. In simple words Sigmoid squashes values to a probability range (0-1). A number close to 1 means it's very likely a car and a number close to 0 means very likely it's not. 
+
 Applying sigmoid:
 
 $$\text{sigmoid}(1.51) = \frac{1}{1 + e^{-1.51}} \approx 0.82$$
