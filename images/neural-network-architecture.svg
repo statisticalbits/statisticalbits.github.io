@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Input Layer -->
+  <g>
+    <text x="100" y="50" font-family="Arial" font-size="16" text-anchor="middle">Input Layer</text>
+    <circle cx="100" cy="100" r="20" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="100" cy="170" r="20" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="100" cy="240" r="20" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    <circle cx="100" cy="310" r="20" fill="#B3E5FC" stroke="#0288D1" stroke-width="2"/>
+    
+    <text x="100" y="105" font-family="Arial" font-size="16" text-anchor="middle">x₁</text>
+    <text x="100" y="175" font-family="Arial" font-size="16" text-anchor="middle">x₂</text>
+    <text x="100" y="245" font-family="Arial" font-size="16" text-anchor="middle">x₃</text>
+    <text x="100" y="315" font-family="Arial" font-size="16" text-anchor="middle">x₄</text>
+  </g>
+
+  <!-- Hidden Layer -->
+  <g>
+    <text x="300" y="50" font-family="Arial" font-size="16" text-anchor="middle">Hidden Layer</text>
+    <circle cx="300" cy="140" r="20" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    <circle cx="300" cy="205" r="20" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    <circle cx="300" cy="270" r="20" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+    
+    <text x="300" y="145" font-family="Arial" font-size="16" text-anchor="middle">h₁</text>
+    <text x="300" y="210" font-family="Arial" font-size="16" text-anchor="middle">h₂</text>
+    <text x="300" y="275" font-family="Arial" font-size="16" text-anchor="middle">h₃</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g>
+    <text x="500" y="50" font-family="Arial" font-size="16" text-anchor="middle">Output Layer</text>
+    <circle cx="500" cy="205" r="20" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2"/>
+    
+    <text x="500" y="210" font-family="Arial" font-size="16" text-anchor="middle">y</text>
+  </g>
+
+  <!-- Connections: Input to Hidden -->
+  <g stroke="#BDBDBD" stroke-width="1.5">
+    <!-- From x₁ -->
+    <line x1="120" y1="100" x2="280" y2="140"/>
+    <line x1="120" y1="100" x2="280" y2="205"/>
+    <line x1="120" y1="100" x2="280" y2="270"/>
+    
+    <!-- From x₂ -->
+    <line x1="120" y1="170" x2="280" y2="140"/>
+    <line x1="120" y1="170" x2="280" y2="205"/>
+    <line x1="120" y1="170" x2="280" y2="270"/>
+    
+    <!-- From x₃ -->
+    <line x1="120" y1="240" x2="280" y2="140"/>
+    <line x1="120" y1="240" x2="280" y2="205"/>
+    <line x1="120" y1="240" x2="280" y2="270"/>
+    
+    <!-- From x₄ -->
+    <line x1="120" y1="310" x2="280" y2="140"/>
+    <line x1="120" y1="310" x2="280" y2="205"/>
+    <line x1="120" y1="310" x2="280" y2="270"/>
+  </g>
+
+  <!-- Connections: Hidden to Output -->
+  <g stroke="#BDBDBD" stroke-width="1.5">
+    <line x1="320" y1="140" x2="480" y2="205"/>
+    <line x1="320" y1="205" x2="480" y2="205"/>
+    <line x1="320" y1="270" x2="480" y2="205"/>
+  </g>
+  
+  <!-- Labels for weights -->
+  <text x="200" y="60" font-family="Arial" font-size="14" text-anchor="middle">Weights (W₁)</text>
+  <text x="400" y="60" font-family="Arial" font-size="14" text-anchor="middle">Weights (W₂)</text>
+  
+  <!-- Description -->
+  <text x="300" y="380" font-family="Arial" font-size="14" text-anchor="middle">4-3-1 Neural Network Architecture for Car Classification</text>
+</svg>

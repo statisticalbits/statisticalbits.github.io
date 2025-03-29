@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="300" y="40" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Neural Network Learning Process</text>
+  
+  <!-- Boxes -->
+  <rect x="200" y="80" width="200" height="60" rx="5" ry="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <rect x="200" y="160" width="200" height="60" rx="5" ry="5" fill="#FCE4EC" stroke="#C2185B" stroke-width="2"/>
+  <rect x="200" y="240" width="200" height="60" rx="5" ry="5" fill="#E8F5E9" stroke="#388E3C" stroke-width="2"/>
+  <rect x="200" y="320" width="200" height="60" rx="5" ry="5" fill="#FFF8E1" stroke="#FFA000" stroke-width="2"/>
+  
+  <!-- Box Labels -->
+  <text x="300" y="110" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1. Forward Propagation</text>
+  <text x="300" y="130" font-family="Arial" font-size="12" text-anchor="middle">Input → Hidden → Output</text>
+  
+  <text x="300" y="190" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">2. Calculate Error/Loss</text>
+  <text x="300" y="210" font-family="Arial" font-size="12" text-anchor="middle">Prediction (0.82) vs. Actual (1.0)</text>
+  
+  <text x="300" y="270" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">3. Backpropagation</text>
+  <text x="300" y="290" font-family="Arial" font-size="12" text-anchor="middle">Compute weight/bias gradients</text>
+  
+  <text x="300" y="350" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">4. Update Parameters</text>
+  <text x="300" y="370" font-family="Arial" font-size="12" text-anchor="middle">W = W - learning_rate * gradient</text>
+  
+  <!-- Arrows -->
+  <g stroke="#555" stroke-width="2" fill="none">
+    <path d="M 300,140 L 300,160" marker-end="url(#arrowhead)"/>
+    <path d="M 300,220 L 300,240" marker-end="url(#arrowhead)"/>
+    <path d="M 300,300 L 300,320" marker-end="url(#arrowhead)"/>
+    <path d="M 200,350 C 150,350 150,110 200,110" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  
+  <!-- Explanatory text -->
+  <text x="425" y="110" font-family="Arial" font-size="12">Make predictions</text>
+  <text x="425" y="190" font-family="Arial" font-size="12">How far off are we?</text>
+  <text x="425" y="270" font-family="Arial" font-size="12">Distribute error backwards</text>
+  <text x="425" y="350" font-family="Arial" font-size="12">Improve model parameters</text>
+  
+  <text x="120" y="230" font-family="Arial" font-size="14" transform="rotate(-90,120,230)" text-anchor="middle">Repeat until converged</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
+  <!-- Background -->
+  <rect width="700" height="250" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Boxes -->
+  <rect x="10" y="100" width="120" height="70" rx="5" ry="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <rect x="160" y="100" width="120" height="70" rx="5" ry="5" fill="#FFFDE7" stroke="#FBC02D" stroke-width="2"/>
+  <rect x="310" y="100" width="120" height="70" rx="5" ry="5" fill="#E8F5E9" stroke="#388E3C" stroke-width="2"/>
+  <rect x="460" y="100" width="120" height="70" rx="5" ry="5" fill="#FFFDE7" stroke="#FBC02D" stroke-width="2"/>
+  <rect x="610" y="100" width="80" height="70" rx="5" ry="5" fill="#FCE4EC" stroke="#C2185B" stroke-width="2"/>
+  
+  <!-- Box Labels -->
+  <text x="70" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Input</text>
+  <text x="70" y="145" font-family="Arial" font-size="12" text-anchor="middle">[0.2, 0.5, 0.1, 0.8]</text>
+  
+  <text x="220" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Linear (W₁, b₁)</text>
+  <text x="220" y="145" font-family="Arial" font-size="12" text-anchor="middle">z₁ = W₁x + b₁</text>
+  <text x="220" y="165" font-family="Arial" font-size="12" text-anchor="middle">[0.62, -0.01, 1.5]</text>
+  
+  <text x="370" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">ReLU</text>
+  <text x="370" y="145" font-family="Arial" font-size="12" text-anchor="middle">a₁ = ReLU(z₁)</text>
+  <text x="370" y="165" font-family="Arial" font-size="12" text-anchor="middle">[0.62, 0, 1.5]</text>
+  
+  <text x="520" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Linear (W₂, b₂)</text>
+  <text x="520" y="145" font-family="Arial" font-size="12" text-anchor="middle">z₂ = W₂a₁ + b₂</text>
+  <text x="520" y="165" font-family="Arial" font-size="12" text-anchor="middle">1.51</text>
+  
+  <text x="650" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Sigmoid</text>
+  <text x="650" y="145" font-family="Arial" font-size="12" text-anchor="middle">σ(z₂)</text>
+  <text x="650" y="165" font-family="Arial" font-size="12" text-anchor="middle">0.82</text>
+  
+  <!-- Arrows -->
+  <g stroke="#555" stroke-width="2" fill="none">
+    <path d="M 130,135 L 160,135" marker-end="url(#arrowhead)"/>
+    <path d="M 280,135 L 310,135" marker-end="url(#arrowhead)"/>
+    <path d="M 430,135 L 460,135" marker-end="url(#arrowhead)"/>
+    <path d="M 580,135 L 610,135" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="40" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Forward Propagation Flow</text>
+  
+  <!-- Layer labels -->
+  <text x="70" y="80" font-family="Arial" font-size="14" text-anchor="middle">Input Layer</text>
+  <text x="295" y="80" font-family="Arial" font-size="14" text-anchor="middle">Hidden Layer</text>
+  <text x="585" y="80" font-family="Arial" font-size="14" text-anchor="middle">Output Layer</text>
+  
+  <!-- Final prediction -->
+  <text x="650" y="200" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Car: 82%</text>
+</svg>

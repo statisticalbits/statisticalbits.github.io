@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="300" y="40" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Matrix Multiplication: W₁x + b₁</text>
+  
+  <!-- Weight Matrix W₁ -->
+  <rect x="50" y="100" width="180" height="160" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <text x="140" y="85" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">W₁ (3×4)</text>
+  
+  <!-- Matrix values -->
+  <text x="140" y="130" font-family="Courier New" font-size="14" text-anchor="middle">[0.1  0.2  -0.1  0.1]</text>
+  <text x="140" y="180" font-family="Courier New" font-size="14" text-anchor="middle">[0.3  0.1  -0.3  0.2]</text>
+  <text x="140" y="230" font-family="Courier New" font-size="14" text-anchor="middle">[-0.2  0.3  0.4  0.1]</text>
+  
+  <!-- Input Vector x -->
+  <rect x="280" y="130" width="60" height="100" fill="#E8F5E9" stroke="#388E3C" stroke-width="2"/>
+  <text x="310" y="85" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">x (4×1)</text>
+  
+  <!-- Vector values -->
+  <text x="310" y="150" font-family="Courier New" font-size="14" text-anchor="middle">[0.2]</text>
+  <text x="310" y="180" font-family="Courier New" font-size="14" text-anchor="middle">[0.5]</text>
+  <text x="310" y="210" font-family="Courier New" font-size="14" text-anchor="middle">[0.1]</text>
+  <text x="310" y="240" font-family="Courier New" font-size="14" text-anchor="middle">[0.8]</text>
+  
+  <!-- Multiplication symbol -->
+  <text x="250" y="180" font-family="Arial" font-size="24" text-anchor="middle">×</text>
+  
+  <!-- Equals symbol -->
+  <text x="360" y="180" font-family="Arial" font-size="24" text-anchor="middle">=</text>
+  
+  <!-- Result Vector z₁ without bias -->
+  <rect x="400" y="135" width="60" height="90" fill="#FFF8E1" stroke="#FFA000" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="430" y="85" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Wx (3×1)</text>
+  
+  <!-- Values -->
+  <text x="430" y="170" font-family="Courier New" font-size="14" text-anchor="middle">[0.12]</text>
+  <text x="430" y="200" font-family="Courier New" font-size="14" text-anchor="middle">[0.29]</text>
+  <text x="430" y="230" font-family="Courier New" font-size="14" text-anchor="middle">[0.80]</text>
+  
+  <!-- Plus symbol -->
+  <text x="480" y="180" font-family="Arial" font-size="24" text-anchor="middle">+</text>
+  
+  <!-- Bias Vector b₁ -->
+  <rect x="510" y="135" width="60" height="90" fill="#FFEBEE" stroke="#D50000" stroke-width="2"/>
+  <text x="540" y="85" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">b₁ (3×1)</text>
+  
+  <!-- Values -->
+  <text x="540" y="170" font-family="Courier New" font-size="14" text-anchor="middle">[0.50]</text>
+  <text x="540" y="200" font-family="Courier New" font-size="14" text-anchor="middle">[-0.30]</text>
+  <text x="540" y="230" font-family="Courier New" font-size="14" text-anchor="middle">[0.70]</text>
+  
+  <!-- Final Result -->
+  <rect x="280" y="280" width="120" height="90" fill="#E1F5FE" stroke="#0277BD" stroke-width="3"/>
+  <text x="340" y="265" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">z₁ = W₁x + b₁</text>
+  
+  <!-- Final values -->
+  <text x="340" y="315" font-family="Courier New" font-size="14" text-anchor="middle">[0.62]</text>
+  <text x="340" y="345" font-family="Courier New" font-size="14" text-anchor="middle">[-0.01]</text>
+  <text x="340" y="375" font-family="Courier New" font-size="14" text-anchor="middle">[1.50]</text>
+  
+  <!-- Arrows -->
+  <g stroke="#555" stroke-width="2" fill="none">
+    <path d="M 430,235 L 430,265 L 340,265" marker-end="url(#arrowhead)"/>
+    <path d="M 540,235 L 540,265 L 340,265" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+</svg>
