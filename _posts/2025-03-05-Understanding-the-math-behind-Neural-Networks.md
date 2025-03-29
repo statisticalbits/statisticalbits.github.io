@@ -17,7 +17,7 @@ It's just like learning how to add 1+3 by hand and understanding *why* 1+3 = 4, 
 
 I strongly believe it's super important to know how models work and their limitations to truly benefit from them. I'm not saying you need to understand every detail of a complex model, but understanding a simple toy model is foundational.
 
-You don't typically add 3424234234 + 978779 mentally—you use a calculator. Similarly, you don't need to understand how an entire complex neural network works, but you should understand the basic principles, just like knowing 1+2 = 3.
+You don't typically mentally add 3424234234 + 978779 — you use a calculator. Similarly, you don't need to understand how an entire complex neural network works, but you should understand the basic principles, just like knowing 1+2 = 3.
 
 ## Building a Toy Neural Network Model
 
@@ -35,7 +35,7 @@ First, we need to decide on the architecture:
 * **Hidden layer**: 3 neurons (arbitrary choice for simplicity)
 * **Output layer**: 1 neuron (car (1) or not (0))
 
-![Neural Network Architecture](/images/neural-network-architecture.png)
+![Neural Network Architecture](/images/neural-network-architecture.svg)
 
 ### What Do These Layers Do?
 
