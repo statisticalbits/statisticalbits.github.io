@@ -5,11 +5,9 @@ date: 2025-03-05
 categories: [machine-learning, neural-networks, mathematics]
 tags: [neural-networks, deep-learning, mathematics, toy-model, tutorial]
 math: true
-image: /assets/images/neural-network-header.jpg
+
 description: "A step-by-step walkthrough of the mathematical foundations of neural networks using a simple toy model"
 ---
-
-# Neural Networks: Understanding the Math Behind It
 
 When I was trying to learn about neural networks, I found thousands of resources explaining their architecture and how they work conceptually. However, I struggled to find a simple resource that walked through the actual math with a concrete example where I could connect the dots.
 
@@ -37,7 +35,7 @@ First, we need to decide on the architecture:
 * **Hidden layer**: 3 neurons (arbitrary choice for simplicity)
 * **Output layer**: 1 neuron (car (1) or not (0))
 
-![Neural Network Architecture](/assets/images/neural-network-architecture.png)
+![Neural Network Architecture](images/neural-network-architecture.png)
 
 ### What Do These Layers Do?
 
@@ -164,6 +162,8 @@ Without non-linear transformation, we'd only be modeling linear relationships (s
 ReLU is a simple function: $\text{ReLU}(x) = \max(0, x)$
 - If the input is positive, output is that same number
 - If the input is negative or zero, output is zero
+  
+![ReLU Activation Function](/images/relu-activation.svg)
 
 Think of ReLU as an "on/off switch" for information. Information that aligns with what a neuron is looking for gets passed along (positive values), while information that doesn't match gets filtered out (negative values become zero).
 
@@ -242,6 +242,8 @@ $$\text{sigmoid}(1.51) = \frac{1}{1 + e^{-1.51}} \approx 0.82$$
 
 So our model predicts there's an 82% chance the image is a car!
 
+![Forward Propagation Flow](/images/forward-propagation.svg)
+
 ## What's Next in the Training Process?
 
 We've just done one forward pass with randomly initialized weights. In a real training process, we would:
@@ -254,7 +256,7 @@ We've just done one forward pass with randomly initialized weights. In a real tr
 
 4. **Repeat**: Pass new images through the updated model, calculate new predictions and losses, and continue until the model performs satisfactorily.
 
-## Conclusion
+![Neural Network Learning Process](/images/learning-process.svg)
 
 This toy example demonstrates the fundamental mathematics behind neural networks. While real-world neural networks contain many more layers and neurons, the basic principles remain the same:
 
