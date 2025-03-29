@@ -242,6 +242,8 @@ $$\text{sigmoid}(1.51) = \frac{1}{1 + e^{-1.51}} \approx 0.82$$
 
 So our model predicts there's an 82% chance the image is a car!
 
+![Neural Network Architecture](/images/neural-network-final-version.svg)
+
 ![Forward Propagation Flow](/images/forward-propagation.svg)
 
 ## What's Next in the Training Process?
