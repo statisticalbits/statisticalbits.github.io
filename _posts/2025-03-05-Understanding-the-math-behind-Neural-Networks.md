@@ -35,7 +35,7 @@ First, we need to decide on the architecture:
 * **Hidden layer**: 3 neurons (arbitrary choice for simplicity)
 * **Output layer**: 1 neuron (car (1) or not (0))
 
-![Neural Network Architecture](images/neural-network-architecture.png)
+![Neural Network Architecture](/images/neural-network-architecture.png)
 
 ### What Do These Layers Do?
 
