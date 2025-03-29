@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Neural Networks: Understanding the Math Behind It"
+title: "The Elegant Math Behind Neural Networks"
 date: 2025-03-05
 categories: [machine-learning, neural-networks, mathematics]
 tags: [neural-networks, deep-learning, mathematics, toy-model, tutorial]
